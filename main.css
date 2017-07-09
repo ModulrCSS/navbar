@@ -1,0 +1,312 @@
+/*
+  @about Modulr.css
+  -----------------------------------------
+  @desc: Pure Css Navigation Module
+  @author: Alan Museljic
+  @git: https://github.com/ModulrCSS/nav
+  @source: http://www.getmodulr.com/css/nav
+  ------------------------------------------------
+  @uses: modulr/nav/*
+  @docs: true 
+\-------------------------------------------------*/
+
+/* 
+  @property: many
+  @desc: navbar reset
+*/
+
+[mod-nav]{
+  font-size: 21px;
+  letter-spacing: .005em;
+  font-weight: 400;
+  width: 100%;
+  height: 52px;
+  padding: 0 16px;
+  margin: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+/* 
+  @property: many
+  @desc: navbar brand
+*/
+
+[mod-brand]{
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* 
+  @property: color
+  @desc: navbar brand href color
+*/
+
+[mod-brand],
+[mod-brand] a,
+[mod-nav] [mod-button~="fab"]{
+  color: inherit;
+}
+
+/* 
+  @property: flex
+  @desc: float brand to the let
+*/
+
+[mod-brand~="left"]{
+  flex-grow: 0;
+}
+[mod-brand~="left"] + [mod-menu]{
+  flex-grow: 1;
+}
+[mod-brand] + [mod-menu~="right"]{
+  flex-grow: 0;
+}
+
+/* 
+  @property: flex
+  @desc: center the brand
+*/
+
+[mod-brand~="center"]{
+  margin: auto;
+  flex-grow: 0;
+}
+
+/* 
+  @property: many
+  @desc: set text to white
+*/
+
+[mod-nav~="text-white"]{
+  color: #ffffff;
+}
+
+/* 
+  @property: many
+  @desc: sidenav
+*/
+
+[mod-nav~="sidenav"]{
+  width: 260px;
+  display: block;
+  height: auto;
+  float: left;
+  padding: 0;
+}
+
+/* 
+  @property: height
+  @desc: fix sidenav height
+*/
+
+ [mod-nav~="sidenav"] [mod-menu] > li,
+ [mod-background] > [mod-menu] > li > [mod-button]{
+   height: auto !important;
+ }
+
+/* 
+  @property: float
+  @desc: sidenav left positioned
+*/
+
+[mod-nav~="left"]{
+  float: left;
+}
+
+/* 
+  @property: float
+  @desc: sidenav right positioned
+*/
+
+[mod-nav~="right"]{
+  float: right;
+}
+
+/* 
+  @property: position
+  @desc: set sidenav position to relative
+*/
+
+[mod-nav~="sidenav"]:not([mod-position]){
+  position: relative;
+}
+
+/* 
+  @property: many
+  @desc: sidenav brand
+*/
+
+[mod-nav~="sidenav"] [mod-brand]{
+  padding: 18px 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 
+  @property: many
+  @desc: sidenav menu
+*/
+
+[mod-nav~="sidenav"] [mod-menu]{
+  padding: 0;
+  height: auto !important;
+}
+
+/* 
+  @property: many
+  @desc: sidenav menu links
+*/
+
+[mod-nav~="sidenav"] [mod-menu] li,
+[mod-nav~="sidenav"] [mod-menu] li a{
+  width: 100%;
+  line-height: 40px;
+  text-align: left;
+}
+
+/* 
+  @property: padding
+  @desc: sidenav menu links padding
+*/
+
+[mod-nav~="sidenav"] > [mod-menu] > li > a{
+  padding: 0 25px !important;
+}
+
+
+/* 
+  @property: flex
+  @desc: navbar fab module
+*/
+
+[mod-nav] [mod-button~="fab"]{
+  font-size: 26px !important;
+  margin-top: 0;
+  margin-bottom: 0;
+  flex-grow: 0;
+}
+
+[mod-nav~="sidenav"] [mod-button~="fab"]{
+  position: absolute;
+  top: 12px;
+  right: 15px;
+}
+
+/*
+  @property: many
+  @desc: push element to fix flex floats
+*/
+
+[mod-nav] [mod-brand~="push-right"],
+[mod-nav] [mod-menu~="push-right"],
+[mod-nav] [mod-button~="push-right"]{
+  flex: 1;
+}
+
+/*
+  @property: many
+  @desc: navbar menu 
+*/
+
+[mod-nav][mod-menu]{
+  padding: 0 20px;
+}
+
+/*
+  @property: many
+  @desc: navbar menu when mod-background applied
+*/
+
+[mod-nav][mod-background] [mod-menu]{
+  height: 100%;
+  line-height: 52px;
+}
+
+/*
+  @property: many
+  @desc: navbar menu hovers when mod-background applied
+*/
+
+[mod-nav][mod-background] [mod-menu] > li > a:hover,
+[mod-nav][mod-background] [mod-menu] > [mod-active] > a {
+ -webkit-border-image: -webkit-linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.12));
+ -moz-border-image: -moz-linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.12));
+ -o-border-image: -o-linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.12));
+ border-image: linear-gradient(rgba(0,0,0,0.12), rgba(0,0,0,0.12));
+  background-image: linear-gradient(rgba(0,0,0,0.12),rgba(0,0,0,0.12))!important;
+  filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00000000, endColorstr=#26000000)"!important;
+}
+
+
+/*
+  @property: many
+  @desc: disable navbar menu hovers when mod-background applied
+*/
+
+[mod-nav][mod-background] [mod-menu~="hover-disabled"] > li > a:hover,
+[mod-nav][mod-background] [mod-menu~="hover-disabled"] > [mod-active] > a{
+  -webkit-border-image: none !important;
+ -moz-border-image: none !important;
+ -o-border-image: none !important;
+ border-image: none !important;
+  background-image: none !important;
+  filter: none !important;
+}
+
+
+/*
+  @property: padding
+  @desc: remove padding from navbar
+*/
+
+[mod-nav~="remove-padding"]{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/*
+  @property: padding
+  @desc: remove left padding from navbar
+*/
+
+[mod-nav~="remove-left-padding"]{
+  padding-left: 0;
+}
+
+/*
+  @property: padding
+  @desc: remove right padding from navbar
+*/
+
+[mod-nav~="remove-right-padding"]{
+  padding-right: 0;
+}
+
+
+/*
+  @property: many
+  @desc: clearfix floats
+*/
+
+[mod-nav]:before,
+[mod-nav]:after{
+  content: "";    
+  display: block; 
+  width: 0;
+  height: 0;    
+  overflow: hidden; 
+}
+[mod-nav]:after{
+  clear: both; 
+}
+[mod-nav]{
+  zoom: 1; 
+}
