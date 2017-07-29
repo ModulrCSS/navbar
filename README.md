@@ -1,4 +1,4 @@
-# modulr-navbar
+# modulr-navbar module
 
 Modulr.css Navbar Module
 
